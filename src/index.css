@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { @apply bg-canvas text-ink font-sans antialiased; }
+.leaflet-container { border-radius: 1rem; height: 100%; width: 100%; z-index: 0; }
+@keyframes slidein { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: none } }
+.anim { animation: slidein .3s ease both; }
+
+/* Light / dark theme toggle */
+.theme-toggle { display: inline-flex; align-items: center; gap: 7px; padding: 7px 9px; border: 1px solid #e5e7eb; border-radius: 999px; background: rgba(255,255,255,.9); color: #475569; cursor: pointer; transition: all .2s ease; }
+.theme-toggle:hover { border-color: #10B981; }
+.theme-track { width: 30px; height: 17px; border-radius: 999px; background: #d1d5db; padding: 2px; display: flex; align-items: center; transition: background .2s ease; }
+.theme-thumb { width: 13px; height: 13px; border-radius: 50%; background: white; box-shadow: 0 1px 3px #0002; transition: transform .2s ease; }
+.theme-sun { color: #d97706; }
+.theme-moon { color: #64748b; }
+html.dark .theme-toggle { background: #1f2937; border-color: #475569; color: #e2e8f0; }
+html.dark .theme-track { background: #10b981; }
+html.dark .theme-thumb { transform: translateX(13px); }
+html.dark .theme-sun { color: #94a3b8; }
+html.dark .theme-moon { color: #facc15; }
+
+/* Shared dark surfaces and readable text across every page and dashboard */
+html.dark body { background: #0b1220; color: #e5e7eb; }
+html.dark .bg-canvas { background-color: #111827 !important; }
+html.dark .bg-white { background-color: #182333 !important; }
+html.dark .bg-white\/80 { background-color: rgba(24,35,51,.88) !important; }
+html.dark .bg-gray-50, html.dark .bg-gray-50\/60 { background-color: #1f2937 !important; }
+html.dark .bg-gray-100 { background-color: #273449 !important; }
+html.dark .bg-emerald-50 { background-color: #123b32 !important; }
+html.dark .bg-red-50 { background-color: #451f2a !important; }
+html.dark .text-ink { color: #e5e7eb !important; }
+html.dark .text-gray-600, html.dark .text-gray-500 { color: #cbd5e1 !important; }
+html.dark .text-gray-400 { color: #94a3b8 !important; }
+html.dark .text-gray-200 { color: #64748b !important; }
+html.dark .border, html.dark .border-t, html.dark .border-b, html.dark .border-gray-100, html.dark .border-gray-200 { border-color: #334155 !important; }
+html.dark input, html.dark select, html.dark textarea { background-color: #1f2937; color: #f1f5f9; border-color: #475569; }
+html.dark input::placeholder, html.dark textarea::placeholder { color: #94a3b8; }
+html.dark .text-forest { color: #bbf7d0 !important; }
+html.dark .border-forest { border-color: #86efac !important; }
+html.dark .hover\:bg-lime\/50:hover { background-color: rgba(217,249,157,.12) !important; }
+html.dark .leaflet-container { filter: brightness(.82) saturate(.85); }
